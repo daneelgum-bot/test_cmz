@@ -12,23 +12,31 @@
 
 ## Дерево топиков
 
-
+```
 devices/{DEVICE_ID}/
-├── status                                          ← online / offline (LWT)
-├── cycle_status                                    ← cycle_on / cycle_off
-├── cmd                                             ← входящие команды (подписка)
-├── sensors/{SENSOR_ID}/
-│   ├── rms                                         → JSON
-│   ├── spectrum                                    → binary
-│   └── waveform                                    → binary
-├── test/sensors/{SENSOR_ID}/
-│   ├── rms                                         → JSON
-│   ├── spectrum1                                   → binary
-│   └── spectrum2                                   → binary
-└── alarm/sensors/{SENSOR_ID}/
-    ├── rms                                         → JSON
-    ├── spectrum                                    → binary
-    └── waveform                                    → binary
+|
++-- status                                    (online / offline, LWT)
++-- cycle_status                              (cycle_on / cycle_off)
++-- cmd                                       (входящие команды, подписка)
+|
++-- sensors/{SENSOR_ID}/
+|   +-- rms                                   -> JSON
+|   +-- spectrum                              -> binary
+|   +-- waveform                              -> binary
+|
++-- test/sensors/{SENSOR_ID}/
+|   +-- rms                                   -> JSON
+|   +-- spectrum1                             -> binary
+|   +-- spectrum2                             -> binary
+|
++-- alarm/sensors/{SENSOR_ID}/
+    +-- rms                                   -> JSON
+    +-- spectrum                              -> binary
+    +-- waveform                              -> binary
+```
+
+---
+
 
 Служебные:
 status — "online" (qos=1, retain), LWT "offline" (qos=1, retain)
