@@ -1,4 +1,5 @@
 ESP32 публикует данные в топики:
+
 devices/{DEVICE_ID}/sensors/{SENSOR_ID}/rms -- JSON строка (rms_speed, rns_accel, crest_factor, alarm, frame_id, axis)
 devices/{DEVICE_ID}/sensors/{SENSOR_ID}/spectrum -- двоичный bin
 devices/{DEVICE_ID}/sensors/{SENSOR_ID}/waveform -- двоичный bin
